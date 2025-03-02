@@ -506,8 +506,9 @@ body {
     .main-section-ecommerce,
     .main-section-inmobiliarias,
     .main-section-despachos {
-        background-attachment: scroll;
-        background-repeat: no-repeat;
+        background-attachment: scroll !important;
+        background-repeat: no-repeat !important;
+        height:auto;
     }
 }
 
