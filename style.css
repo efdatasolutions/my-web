@@ -815,6 +815,11 @@ main p {
 
 /* Ajustes para móvil */
 @media (max-width: 768px) {
+    .desafios {
+        background-attachment: scroll; /* Elimina el efecto fixed para móviles */
+        background-repeat: no-repeat; /* Asegura que la imagen no se repita */
+    }
+    
     .desafios-container {
         gap: 30px; /* Reduce el espacio entre ítems en móvil */
     }
@@ -1213,6 +1218,7 @@ main p {
     }
 
     .testimonial-slide {
+        width: 80%;
         margin: 20px; /* Ajusta el margen si es necesario */
     }
 }
