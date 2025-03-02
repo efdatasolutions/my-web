@@ -499,6 +499,17 @@ body {
     }  
 }
 
+@media (max-width: 768px) {
+    .main-section-asesorias,
+    .main-section-fintech,
+    .main-section-logistica,
+    .main-section-ecommerce,
+    .main-section-inmobiliarias,
+    main-section-despachos {
+        background-attachment: scroll;
+        background-repeat: no-repeat;
+    }
+}
 
 .main-section-ecommerce h2 {
     background: rgba(24, 102, 163, 0.15);
