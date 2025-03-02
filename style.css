@@ -1222,6 +1222,8 @@ main p {
         max-width: 400px; /* Limita el ancho máximo en móvil */
         margin: 15px; /* Reduce el margen en móvil */
         padding: 15px; /* Reduce el padding en móvil */
+        overflow: hidden; /* Asegura que el texto no se salga */
+        box-sizing: border-box; /* Asegura que el padding no afecte al ancho total */
     }
 
     .testimonials h2 {
