@@ -1218,7 +1218,7 @@ main p {
     }
 
     .testimonial-slide {
-        width: 80%;
+        width: 50%;
         margin: 20px; /* Ajusta el margen si es necesario */
     }
 }
