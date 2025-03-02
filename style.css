@@ -1219,6 +1219,7 @@ main p {
 
     .testimonial-slide {
         width: 90%; /* Establece el ancho en móvil a 90% */
+        height: auto;
         max-width: 400px; /* Limita el ancho máximo en móvil */
         margin: 15px; /* Reduce el margen en móvil */
         padding: 15px; /* Reduce el padding en móvil */
