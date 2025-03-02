@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EF Data Solutions - Sectores</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="logo.png">
+    <style>
+        /* Estilos base */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #212529;
+        }
+
+        /* Sección principal */
+        .main-section-sectors {
+            background-image: url('tu-imagen.jpg'); /* Sustituye por tu imagen de fondo */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            max-width: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            text-align: center;
+        }
+
+        .main-section-sectors::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            z-index: 0;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Títulos */
+        .main-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #fff;
+            text-transform: uppercase;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .title-prefix {
+            color: #fff;
+        }
+
+        .title-sector {
+            color: #26A9E0;
+            display: block;
+        }
+
+        .main-subtitle {
+            font-size: 1.2rem;
+            color: #e0e0e0;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        .intro-text {
+            font-size: 1.1rem;
+            color: #e0e0e0;
+            margin-bottom: 50px;
+        }
+
+        /* Grid de sectores */
+        .sectors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            justify-items: center;
+        }
+
+        .sector-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+        }
+
+        .sector-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .sector-card h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.6rem;
+            color: #26A9E0;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .sector-card p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* Botones */
+        .btn {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1rem;
+            color: #fff;
+            background: linear-gradient(to right, #1866A3, #26A9E0);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #fff;
+            color: #1866A3;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* CTA de contacto */
+        .contact-cta {
+            margin-top: 50px;
+        }
+
+        .contact-cta p {
+            font-size: 1.1rem;
+            color: #e0e0e0;
+            margin-bottom: 20px;
+        }
+
+        .contact-cta .cta-btn {
+            font-size: 1.2rem;
+            padding: 12px 30px;
+        }
+
+        /* Animaciones */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsividad */
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2rem;
+            }
+            .main-subtitle, .intro-text, .contact-cta p {
+                font-size: 1rem;
+            }
+            .sector-card {
+                padding: 20px;
+            }
+            .sector-card h2 {
+                font-size: 1.4rem;
+            }
+            .sector-card p {
+                font-size: 0.9rem;
+            }
+            .btn {
+                font-size: 0.9rem;
+                padding: 8px 16px;
+            }
+            .contact-cta .cta-btn {
+                font-size: 1rem;
+                padding: 10px 25px;
+            }
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra superior -->
+    <div class="top-bar" role="banner">
+        <span class="fade-in-up">¡Descuento exclusivo del 20% para nuevos clientes este mes!</span>
+    </div>
+
+    <!-- 🔹 Encabezado -->
+<header>
+    <div class="header-container">
+        <!-- Logo + Nombre -->
+        <div class="logo">
+            <img src="logo.png" alt="Logo de EF Data Solutions">
+            <span class="company-name">EF Data Solutions</span>
+        </div>
+
+        <!-- Botón Hamburguesa para Móvil -->
+        <button class="menu-toggle" aria-label="Toggle Menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <!-- Navegación + Redes Sociales dentro -->
+        <div class="nav-links">
+            <a href="inicio.html">Inicio</a>
+            <a href="sobre-nosotros.html">Sobre nosotros</a>
+            <a href="contacto.html">Contacto</a>
+            <div class="dropdown">
+                <a href="sectores.html" class="dropbtn">Sectores</a>
+                <div class="dropdown-content">
+                    <a href="Servicios Financieros y Fintechs.html">Fintech y Finanzas</a>
+                    <a href="retail y e-commerce.html">Retail y e-Commerce</a>
+                    <a href="logistica.html">Logística y Transporte</a>
+                    <a href="inmobiliaria y construccion.html">Inmobiliaria y Construcción</a>
+                    <a href="asesorias y despachos contables.html">Asesorías y Despachos Contables</a>
+                    <a href="Despachos Profesionales con Alto Volumen de Datos.html">Despachos Profesionales</a>
+                    <a href="sectores.html">Ver todos</a>
+                </div>
+            </div>
+            <!-- Redes Sociales dentro del menú -->
+            <div class="social-icons">
+                <a href="https://www.facebook.com/people/EF-Data-Solutions/61571984073565/?sk=about" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/efdatasolutions/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/ef-data-solutions" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+</header>
+    
+    <section class="main-section-sectors">
+        <div class="container">
+            <h1 class="main-title fade-in-up">
+                <span class="title-prefix">Sectores en los que</span>
+                <span class="title-sector">Trabajamos</span>
+            </h1>
+            <p class="main-subtitle fade-in-up">
+                En EF Data Solutions, adaptamos nuestras soluciones de automatización y análisis de datos a las necesidades específicas de cada industria. Entendemos que cada sector tiene retos únicos y requerimientos distintos, por lo que ofrecemos un enfoque personalizado para optimizar procesos, mejorar la toma de decisiones y reducir tiempos operativos.
+            </p>
+            <p class="intro-text fade-in-up">A continuación, puedes explorar cómo nuestras soluciones benefician a distintos sectores:</p>
+            <div class="sectors-grid fade-in-up">
+                <div class="sector-card">
+                    <h2>Fintech y Finanzas</h2>
+                    <p>Automatiza la generación de reportes, agiliza el cumplimiento normativo y reduce el tiempo en tareas repetitivas.</p>
+                    <a href="Servicios Financieros y Fintechs.html" class="btn">Descubre más</a>
+                </div>
+                <div class="sector-card">
+                    <h2>Retail y Comercio</h2>
+                    <p>Optimiza la gestión de inventarios, automatiza reportes de ventas y simplifica el seguimiento del negocio.</p>
+                    <a href="retail y e-commerce.html" class="btn">Descubre más</a>
+                </div>
+                <div class="sector-card">
+                    <h2>Logística y Transporte</h2>
+                    <p>Automatiza el control de envíos, optimiza rutas y mejora la gestión operativa con procesos más eficientes.</p>
+                    <a href="logistica.html" class="btn">Descubre más</a>
+                </div>
+                <div class="sector-card">
+                    <h2>Inmobiliaria y Construcción</h2>
+                    <p>Simplifica la gestión de presupuestos, agiliza reportes financieros y automatiza procesos clave.</p>
+                    <a href="inmobiliaria y construccion.html" class="btn">Descubre más</a>
+                </div>
+                <div class="sector-card">
+                    <h2>Asesorías y Despachos Contables</h2>
+                    <p>Elimina tareas manuales con automatización de reportes fiscales, conciliaciones y procesos contables.</p>
+                    <a href="asesorias y despachos contables.html" class="btn">Descubre más</a>
+                </div>
+                <div class="sector-card">
+                    <h2>Despachos Profesionales</h2>
+                    <p>Digitaliza y automatiza la gestión documental, la generación de informes y el flujo de trabajo.</p>
+                    <a href="Despachos Profesionales con Alto Volumen de Datos.html" class="btn">Descubre más</a>
+                </div>
+            </div>
+            <div class="contact-cta fade-in-up">
+                <p>¿No ves tu sector en la lista? <strong>Contáctanos</strong> y analizaremos cómo podemos ayudarte a optimizar tus procesos con datos.</p>
+                <a href="contacto.html" class="btn cta-btn">Contáctanos</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-contenedor">
+            <div class="footer-logo">
+                <img src="logo 3.png" alt="EF Data Solutions">
+            </div>
+            <p class="footer-texto">¿Listo para llevar la gestión de tu empresa al siguiente nivel?</p>  
+            <div class="contacto">
+                <p><i class="fa-solid fa-phone"></i> <a href="tel:+34 675849369">+34 675 849 369</a></p>
+                <p><i class="fa-solid fa-envelope"></i> <a href="mailto:info@efdatasolutions.com">info@efdatasolutions.com</a></p>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/people/EF-Data-Solutions/61571984073565/?sk=about" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/efdatasolutions/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/ef-data-solutions" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+        <div class="footer-copy">
+            <p>© 2025 EF Data Solutions. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="script.js" defer></script>
+</body>
+</html>

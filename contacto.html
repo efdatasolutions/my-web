@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EF Data Solutions</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="logo.png">
+   <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #212529;
+        }
+
+        /* Estilo principal de la sección */
+        .main-section-contacto {
+            background-image: url('contacto.jpg'); /* Sustituye por tu imagen de fondo */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            max-width: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            text-align: center;
+        }
+
+        .main-section-contacto::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            z-index: 0;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .main-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #fff;
+            text-transform: uppercase;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .title-prefix {
+            color: #fff;
+            font-size: 2.5rem;
+        }
+
+        .title-sector {
+            color: #26A9E0;
+            font-size: 2.5rem;
+            display: block;
+        }
+
+        .main-subtitle {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2rem;
+            color: #e0e0e0;
+            opacity: 0.85;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        /* Opciones de contacto */
+        .contact-options {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .option {
+            flex: 1;
+            min-width: 300px;
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(10, 60, 107, 0.9), rgba(24, 102, 163, 0.7));
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .option:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .option h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.8rem;
+            color: #26A9E0;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .option p {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            color: #e0e0e0;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            color: #fff;
+            background: linear-gradient(to right, #1866A3, #26A9E0);
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background: #fff;
+            color: #1866A3;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Formulario */
+        .form-container {
+            margin-top: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #fff;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            font-size: 1rem;
+            color: #fff;
+            background: rgba(255, 255, 255, 0.1);
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #26A9E0;
+            outline: none;
+            box-shadow: 0 0 5px rgba(38, 169, 224, 0.3);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        /* Animaciones */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .main-section-contacto {
+                min-height: 50vh;
+                padding: 20px;
+            }
+            .container {
+                padding: 20px;
+            }
+            .main-title {
+                font-size: 1.8rem;
+            }
+            .main-subtitle {
+                font-size: 1rem;
+            }
+            .contact-options {
+                flex-direction: column;
+                gap: 30px;
+            }
+            .option {
+                padding: 20px;
+            }
+            .option h2 {
+                font-size: 1.6rem;
+            }
+            .option p {
+                font-size: 1rem;
+            }
+            .btn {
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+
+    <!-- 🔹 Barra superior con descuento -->
+    <div class="top-bar">
+        ¡Descuento exclusivo del 20% para nuevos clientes este mes!
+    </div>
+
+    <!-- 🔹 Encabezado -->
+<header>
+    <div class="header-container">
+        <!-- Logo + Nombre -->
+        <div class="logo">
+            <img src="logo.png" alt="Logo de EF Data Solutions">
+            <span class="company-name">EF Data Solutions</span>
+        </div>
+
+        <!-- Botón Hamburguesa para Móvil -->
+        <button class="menu-toggle" aria-label="Toggle Menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <!-- Navegación + Redes Sociales dentro -->
+        <div class="nav-links">
+            <a href="inicio.html">Inicio</a>
+            <a href="sobre-nosotros.html">Sobre nosotros</a>
+            <a href="contacto.html">Contacto</a>
+            <div class="dropdown">
+                <a href="sectores.html" class="dropbtn">Sectores</a>
+                <div class="dropdown-content">
+                    <a href="Servicios Financieros y Fintechs.html">Fintech y Finanzas</a>
+                    <a href="retail y e-commerce.html">Retail y e-Commerce</a>
+                    <a href="logistica.html">Logística y Transporte</a>
+                    <a href="inmobiliaria y construccion.html">Inmobiliaria y Construcción</a>
+                    <a href="asesorias y despachos contables.html">Asesorías y Despachos Contables</a>
+                    <a href="Despachos Profesionales con Alto Volumen de Datos.html">Despachos Profesionales</a>
+                    <a href="sectores.html">Ver todos</a>
+                </div>
+            </div>
+            <!-- Redes Sociales dentro del menú -->
+            <div class="social-icons">
+                <a href="https://www.facebook.com/people/EF-Data-Solutions/61571984073565/?sk=about" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/efdatasolutions/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/ef-data-solutions" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<body>
+    <section class="main-section-contacto">
+        <div class="container">
+            <h1 class="main-title fade-in-up">
+                <span class="title-prefix">Ponte en</span>
+                <span class="title-sector">Contacto</span>
+            </h1>
+            <p class="main-subtitle fade-in-up">Estamos aquí para ayudarte. Elige cómo prefieres conectar con nosotros.</p>
+            <div class="contact-options fade-in-up">
+                <div class="option">
+                    <h2>¿Quieres hablar?</h2>
+                    <p>Agenda una reunión personalizada con nuestro equipo para discutir tus necesidades.</p>
+                    <a href="https://calendly.com/efdatasolutions-info" class="btn" target="_blank">Agendar reunión</a>
+                </div>
+                <div class="option">
+                    <h2>¿Prefieres más información?</h2>
+                    <p>Completa el formulario y te enviaremos todos los detalles sin compromiso.</p>
+                    <div class="form-container">
+                        <form action="/enviar.php" method="POST">
+                            <div class="form-group">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Correo electrónico</label>
+                                <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="mensaje">Mensaje</label>
+                                <textarea id="mensaje" name="mensaje" placeholder="¿En qué podemos ayudarte?" required></textarea>
+                            </div>
+                            <button type="submit" class="btn">Enviar solicitud</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-contenedor">
+            <div class="footer-logo">
+                <img src="logo 3.png" alt="EF Data Solutions">
+            </div>
+            <p class="footer-texto">¿Listo para llevar la gestión de tu empresa al siguiente nivel?</p>  
+            <div class="contacto">
+                <p><i class="fa-solid fa-phone"></i> <a href="tel:+34 675849369">+34 675 849 369</a></p>
+                <p><i class="fa-solid fa-envelope"></i> <a href="mailto:info@efdatasolutions.com">info@efdatasolutions.com</a></p>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/people/EF-Data-Solutions/61571984073565/?sk=about" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/efdatasolutions/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/ef-data-solutions" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+        <div class="footer-copy">
+            <p>&copy; 2025 EF Data Solutions. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+<script src="script.js" defer></script>
+
+</body>
+</html>
