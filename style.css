@@ -1212,9 +1212,9 @@ main p {
 /* Ajustes para móvil */
 @media (max-width: 768px) {
     .testimonials {
-        flex-direction: column; /* Mantiene el título en la parte superior */
-        justify-content: flex-start;
-        align-items: center;
+        background-attachment: scroll; /* Elimina el efecto fixed para móviles */
+        background-repeat: no-repeat; /* Asegura que la imagen no se repita */
+        height: auto;
     }
 
     .testimonial-slide {
@@ -1224,6 +1224,8 @@ main p {
         padding: 15px; /* Reduce el padding en móvil */
         overflow: hidden; /* Asegura que el texto no se salga */
         box-sizing: border-box; /* Asegura que el padding no afecte al ancho total */
+        word-wrap: break-word; /* Ajusta el texto largo en móvil */
+        overflow-wrap: break-word; /* Ajusta el texto largo en móvil */
     }
 
     .testimonials h2 {
