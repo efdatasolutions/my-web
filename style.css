@@ -356,6 +356,15 @@ main p {
     transition: none;
 }
 
+@media (max-width: 768px) {
+    .parallax {
+        background-attachment: scroll; /* Elimina el fixed en móviles */
+        background-size: contain; /* Ajusta la imagen para que se vea completa */
+        background-position: top center; /* Centra la imagen desde la parte superior */
+        height: 50vh; /* Ajusta la altura para móviles */
+    }
+}
+
 .parallax-content {
     position: relative;
     z-index: 2; /* Asegura que el texto esté por encima de la imagen de fondo */
