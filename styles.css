@@ -949,12 +949,12 @@ body {
     }
 
     .services-table td {
-        font-size: 9px; /* Reduce tamaño de fuente */
-        padding: 5px; /* Reduce padding */
+        font-size: 8px; /* Reduce tamaño de fuente */
+        padding: 3px; /* Reduce padding */
     }
 
     .services-table th {
-        font-size: 10px; /* Reduce tamaño de headers */
+        font-size: 9px; /* Reduce tamaño de headers */
     }
 }
 
