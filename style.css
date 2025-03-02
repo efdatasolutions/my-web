@@ -1209,8 +1209,8 @@ main p {
     color: #555;
 }
 
-/* Centra el título en pantallas grandes */
-@media (min-width: 768px) {
+/* Ajustes para móvil */
+@media (max-width: 768px) {
     .testimonials {
         flex-direction: column; /* Mantiene el título en la parte superior */
         justify-content: flex-start;
@@ -1218,8 +1218,15 @@ main p {
     }
 
     .testimonial-slide {
-        width: 50%;
-        margin: 20px; /* Ajusta el margen si es necesario */
+        width: 90%; /* Establece el ancho en móvil a 90% */
+        max-width: 400px; /* Limita el ancho máximo en móvil */
+        margin: 15px; /* Reduce el margen en móvil */
+        padding: 15px; /* Reduce el padding en móvil */
+    }
+
+    .testimonials h2 {
+        font-size: 1.2rem; /* Reduce el tamaño del título en móvil */
+        padding-top: 30px; /* Ajusta el espacio superior en móvil */
     }
 }
 
